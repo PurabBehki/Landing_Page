@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container{
+    display: flex;
+    height: 100vh;
+}
+
+
+.split-left,
+.split-right{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: flex 0.5s ease;
+    position: relative;
+}
+
+.split-left{
+    background: url('macbook.avif') no-repeat center/cover;
+}
+
+.split-right{
+    background: url('windows.avif') no-repeat center/cover;
+}
+
+.split-left::before,
+.split-right::before{
+    content:"";
+    position:absolute;
+    top:0%;
+    left:0%;
+    width:100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.split-left * ,
+.split-right * {
+    position: relative;
+    z-index: 1;
+}
+
+.split-left:hover{
+    flex:2;
+}
+
+.split-right:hover{
+    flex:2;
+}
+
+h1 {
+    font-size: 65px;
+    color: rgb(207, 207, 209);
+    letter-spacing: 2.5px;
+    margin-bottom: 10px;
+    background: none;
+}
+
+.btn {
+    background-color: rgb(41, 36, 107);
+    color: white;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 7.5px;
+    cursor: pointer;
+    transition: 1s background-color;
+    white-space: nowrap;
+    border:none;
+    box-shadow: 0 0 5px rgb(16, 74, 133,0.9);
+}
+
+.btn:hover {
+    background-color: rgb(16, 74, 133);
+    color: white;
+    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgb(16, 74, 133,0.9),
+        0 0 20px rgb(16, 74, 133,0.6);
+}
